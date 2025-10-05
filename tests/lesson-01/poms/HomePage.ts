@@ -9,6 +9,10 @@ export class HomePage extends BasePage {
         this.headingLocator = page.locator("//p[@class='site-title']/a");
     }
 
+    async navigateToHomePage(){
+        await this.openUrl(process.env.BASE_URL!);
+    }
+
     async getPageHeading(){
         return this.headingLocator.textContent();
     }

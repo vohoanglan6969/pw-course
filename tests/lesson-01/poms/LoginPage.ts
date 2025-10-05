@@ -15,6 +15,10 @@ export class LoginPage extends BasePage{
         this.errorMessageLocator = page.locator("//div[@id='login_error']/p");
     }
 
+    async navigateToLoginPage(){
+        await this.openUrl(process.env.ADMIN_URL!);
+    }
+
     async login(userName: string, password: string){
         await this.userNameLocator.fill(userName);
         await this.passwordLocator.fill(password);

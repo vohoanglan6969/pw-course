@@ -10,13 +10,17 @@ test.describe('Verify home page', () => {
   test.beforeEach(async ({ page }) => {
     await test.step('Precondition: Go to home page', async () => {
       homePage = new HomePage(page);
-      await homePage.openUrl(process.env.BASE_URL!);
+      await homePage.navigateToHomePage();
     });
   });
 
   test(
-    'HOME_001: Verify the home page displays correctly',
-    { tag: ['@ui'] },
+    'HOME_001: Verify the home page displays correctly',{
+      annotation: {
+        type: "HOME",
+        description: "HOME-001"
+    },
+      tag: ["@HOME-001", "@HOME", "@UI"] },
     async ({ page }) => {
       await test.step('Step 1: Verify page title', async () => {
         const actualPageTitle = await homePage.getPageTitle();
