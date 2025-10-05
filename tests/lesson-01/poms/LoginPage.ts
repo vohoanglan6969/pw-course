@@ -7,7 +7,6 @@ export class LoginPage extends BasePage{
     readonly loginButtonLocator: Locator;
     readonly errorMessageLocator: Locator;
     
-
     constructor(page: Page){
         super(page);
         this.userNameLocator = page.locator("#user_login");
