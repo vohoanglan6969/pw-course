@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "login_title": "Log In ‹ E-commerce site for automation testing — WordPress",
+        "valid_username": "student-user",
+        "valid_password": "1GT5WFx&MHlmAmSFH#u1HHn6",
+        "invalid_username":"student-user-invalid",
+        "invalid_password": "invalidpassword",
+        "dashboard_heading": "Dashboard",
+        "error_message": "Error: The username ${userName} is not registered on this site. If you are unsure of your username, try your email address instead."
+    },
+    "prod": {
+        "login_title": "Log In ‹ E-commerce site for automation testing — WordPress",
+        "valid_username": "pw101",
+        "valid_password": "vB30(jIwq2Jn6GloUu&asCKP",
+        "invalid_username":"pw101-invalid",
+        "invalid_password": "invalidpassword",
+        "dashboard_heading": "Dashboard",
+        "error_message": "Error: The username ${userName} is not registered on this site. If you are unsure of your username, try your email address instead."
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "title": "E-commerce site for automation testing – E-commerce site for automation testing",
+    "heading": "E-commerce site for automation testing",
+    "productCount": 22
+  },
+  "prod": {
+    "title": "Automation test site – Automation test site",
+    "heading": "Automation test site",
+    "productCount": 37
+  }
+}
