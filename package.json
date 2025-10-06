@@ -2,7 +2,12 @@
   "name": "pw-course-01",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test_dev": "cross-env ENV_NAME=dev npx playwright test --workers=1",
+    "test_prod": "cross-env ENV_NAME=prod npx playwright test --workers=1",
+    "test_dev_smoke": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1",
+    "test_dev_smoke_debug": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1 --debug"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,6 +15,8 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.55.0",
-    "@types/node": "^24.3.1"
+    "@types/node": "^24.3.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3"
   }
 }
