@@ -4,14 +4,14 @@ import { NewProductPage } from "../poms/NewProductPage";
 import { EditProductPage } from "../poms/EditProductPage";
 import { ProductListPage } from "../poms/ProductListPage";
 
-type loginFixture = {
+type AdminFixture = {
     loginPage: LoginPage;
     newProductPage: NewProductPage;
     editProductPage: EditProductPage;
     productListPage: ProductListPage;
 }
 
-export const test = base.extend<loginFixture>({
+export const test = base.extend<AdminFixture>({
     loginPage: async({page}, use) => {
         const loginPage = new LoginPage(page); 
         const userName = process.env.ACCOUNT!;

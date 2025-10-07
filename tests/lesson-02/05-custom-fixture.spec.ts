@@ -9,7 +9,10 @@ test.describe('PRODUCT', () => {
 
   test(
     'PRODUCT_001: Verify that product is created successfully',
-    { tag: ['@PRODUCT_002', '@PRODUCT'] },
+    {
+      annotation: [{ type: "PRODUCT", description: "PRODUCT_001" }],
+      tag: ["@PRODUCT_001", "@PRODUCT"],
+    },
     async ({ loginPage, newProductPage, editProductPage, homePage }) => {
       test.setTimeout(60_000);
 

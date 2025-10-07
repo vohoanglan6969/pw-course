@@ -65,5 +65,4 @@ export class HomePage extends BasePage {
             actualSalePrice: await extractPrice(1)
         };
     }
-
 }

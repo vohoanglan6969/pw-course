@@ -1,13 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from './poms/LoginPage';
-import { NewProductPage } from './poms/NewProductPage';
-import { EditProductPage } from './poms/EditProductPage';
-import { ProductListPage } from './poms/ProductListPage';
-import { HomePage } from './poms/HomePage';
-import { Product } from './interfaces/product';
-import productDataJs from './01-built-in-page.data.json';
+import { test, expect } from "@playwright/test";
+import { LoginPage } from "./poms/LoginPage";
+import { NewProductPage } from "./poms/NewProductPage";
+import { EditProductPage } from "./poms/EditProductPage";
+import { ProductListPage } from "./poms/ProductListPage";
+import { HomePage } from "./poms/HomePage";
+import { Product } from "./interfaces/product";
+import productDataJs from "./01-built-in-page.data.json";
 
-test.describe('PRODUCT', () => {
+test.describe("PRODUCT", () => {
   let loginPage: LoginPage;
   let newProductPage: NewProductPage;
   let editProductPage: EditProductPage;
@@ -19,7 +19,7 @@ test.describe('PRODUCT', () => {
   const productData = ((productDataJs as any)[envName!]?.data ?? {}) as Product;
   const expectedMessage = (productDataJs as any)[envName]?.message.successMessage;
 
-  test.beforeEach('Pre-condition: Login to system', async ({ page }) => {
+  test.beforeEach("Pre-condition: Login to system", async ({ page }) => {
     loginPage = new LoginPage(page);
     newProductPage = new NewProductPage(page);
     editProductPage = new EditProductPage(page);
@@ -31,16 +31,19 @@ test.describe('PRODUCT', () => {
   });
 
   test(
-    'PRODUCT_001: Verify that product is created successfully',
-    { tag: ['@PRODUCT_001', '@PRODUCT'] },
+    "PRODUCT_001: Verify that product is created successfully",
+    {
+      annotation: { type: "PRODUCT", description: "PRODUCT_001" },
+      tag: ["@PRODUCT_001", "@PRODUCT"],
+    },
     async () => {
-      await test.step('Step 1: Enter product information', async () => {
+      await test.step("Step 1: Enter product information", async () => {
         await newProductPage.createNewProduct(productData);
         const actualMessage = await editProductPage.getSuccessMessage();
         expect(actualMessage).toContain(expectedMessage.toString());
       });
 
-      await test.step('Step 2: Verify that product is created successfully', async () => {
+      await test.step("Step 2: Verify that product is created successfully", async () => {
         await homePage.navigateToHomePage();
 
         const { productName, regularPrice, salePrice } = productData;
@@ -54,7 +57,7 @@ test.describe('PRODUCT', () => {
     }
   );
 
-  test.afterEach('Tear-down: Delete product', async ({ page }) => {
+  test.afterEach("Tear-down: Delete product", async ({ page }) => {
     const productListPage = new ProductListPage(page);
     await productListPage.navigateToProductListPage();
     await productListPage.deleteProductByName(productData.productName);

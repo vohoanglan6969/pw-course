@@ -15,5 +15,4 @@ export class BasePage{
     async getPageTitle(){
         return await this.page.title();
     }
-    
 }
