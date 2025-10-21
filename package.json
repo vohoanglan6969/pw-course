@@ -8,7 +8,8 @@
     "test_dev_smoke": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1",
     "test_dev_smoke_debug": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1 --debug",
     "test_dev_lesson2": "cross-env ENV_NAME=dev npx playwright test --workers=1 --grep=PRODUCT --headed",
-    "test_prod_lesson2": "cross-env ENV_NAME=prod npx playwright test --workers=1 --grep=PRODUCT --headed"
+    "test_prod_lesson2": "cross-env ENV_NAME=prod npx playwright test --workers=1 --grep=PRODUCT --headed",
+    "test_dev_lesson4": "cross-env ENV_NAME=dev npx playwright test --workers=1 --grep=PRODUCT_002 --headed"
   },
   "keywords": [],
   "author": "",
