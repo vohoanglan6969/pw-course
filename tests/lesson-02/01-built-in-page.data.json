@@ -1,0 +1,22 @@
+{
+  "dev": {
+    "data": {
+      "productName": "[LAN] Khoá học API Testing với Postman",
+      "regularPrice": 100,
+      "salePrice": 80
+    },
+    "message": {
+      "successMessage": "Product published"
+    }
+  },
+  "prod": {
+    "data": {
+      "productName": "[LAN] Khoá học Performance testing với K6",
+      "regularPrice": 120,
+      "salePrice": 70
+    },
+    "message": {
+      "successMessage": "Product published"
+    }
+  }
+}

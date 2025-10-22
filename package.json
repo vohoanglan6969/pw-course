@@ -6,7 +6,10 @@
     "test_dev": "cross-env ENV_NAME=dev npx playwright test --workers=1",
     "test_prod": "cross-env ENV_NAME=prod npx playwright test --workers=1",
     "test_dev_smoke": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1",
-    "test_dev_smoke_debug": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1 --debug"
+    "test_dev_smoke_debug": "cross-env ENV_NAME=dev npx playwright test --grep=smoke --headed --workers=1 --debug",
+    "test_dev_lesson2": "cross-env ENV_NAME=dev npx playwright test --workers=1 --grep=PRODUCT --headed",
+    "test_prod_lesson2": "cross-env ENV_NAME=prod npx playwright test --workers=1 --grep=PRODUCT --headed",
+    "test_dev_lesson4": "cross-env ENV_NAME=dev npx playwright test --workers=1 --grep=PRODUCT_002 --headed"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,8 @@
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.3.1",
     "cross-env": "^10.1.0",
-    "dotenv": "^17.2.3"
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.3",
+    "xlsx": "^0.18.5"
   }
 }
