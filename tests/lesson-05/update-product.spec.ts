@@ -1,7 +1,7 @@
 import { test, expect } from './fixtures/fixture';
 import { randomUUID } from 'crypto';
 
-test.describe('API-Testing @LESSON5', () => {
+test.describe('API-Testing', () => {
   let categoryId: string;
   let productId: string;
 
