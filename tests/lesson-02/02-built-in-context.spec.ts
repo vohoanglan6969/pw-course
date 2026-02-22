@@ -32,7 +32,10 @@ test.describe('PRODUCT', () => {
 
   test(
     'PRODUCT_001: Verify that product is created successfully',
-    { tag: ['@PRODUCT_001', '@PRODUCT'] },
+    {
+      annotation: [{ type: "PRODUCT", description: "PRODUCT_001" }],
+      tag: ["@PRODUCT_001", "@PRODUCT"],
+    },
     async ({ context }) => {
       await test.step('Step 1: Enter product information', async () => {
         await newProductPage.createNewProduct(productData);
